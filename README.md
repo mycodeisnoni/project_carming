@@ -61,9 +61,8 @@
 
 ## 	🚩주요 기술
 
-[기능명세서](https://lab.ssafy.com/s08-mobility-autodriving-sub1/S08P21A408/-/blob/2324b6a3f21ab1c4daab91d62235f1a0ba81d2f3/docs/%EA%B8%B0%EB%8A%A5%EB%AA%85%EC%84%B8%EC%84%9C.png)
-
 ---
+
 ![시스템 아키텍쳐.png](./Docs/시스템 아키텍쳐.png)
 ![redis를 이용한 통신 시스템 아키텍쳐.png](./Docs/통신 아키텍쳐.png)
 
