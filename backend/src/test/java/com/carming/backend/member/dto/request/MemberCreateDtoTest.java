@@ -39,7 +39,6 @@ class MemberCreateDtoTest {
         MemberCreateDto memberCreateDto = MemberCreateDto.builder()
                 .phone(phoneNumber)
                 .build();
-
         //when
         Set<ConstraintViolation<MemberCreateDto>> resultSet = validator.validate(memberCreateDto);
 

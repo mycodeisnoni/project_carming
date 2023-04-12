@@ -1,5 +1,6 @@
 package com.carming.backend.place.service;
 
+import com.carming.backend.DBConfig;
 import com.carming.backend.place.domain.Place;
 import com.carming.backend.place.domain.PlaceCategory;
 import com.carming.backend.place.dto.request.PlaceSearch;
@@ -23,6 +24,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 class PlaceServiceTest {
+
+    @Autowired
+    DBConfig dbConfig;
 
     @Autowired
     PlaceRepository placeRepository;

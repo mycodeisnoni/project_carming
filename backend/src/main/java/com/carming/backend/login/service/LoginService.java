@@ -30,7 +30,6 @@ public class LoginService {
         Member foundMember = memberRepository.findByPhone(request.getPhone())
                 .orElseThrow(MemberNotFound::new);
 
-
         String accessToken = JwtProvider.generateToken(authentication);
         return new LoginResponseDto(JwtConst.TOKEN_TYPE, accessToken, foundMember.getNickname(), foundMember.getProfile());
     }

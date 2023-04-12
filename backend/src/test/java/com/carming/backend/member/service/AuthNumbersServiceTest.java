@@ -9,8 +9,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
+import org.mockito.Mockito;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
+
+import java.time.Duration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
@@ -27,8 +30,6 @@ class AuthNumbersServiceTest {
 
     private AuthNumbersService authNumbersService;
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
-
     @BeforeEach
     public void setUp() {
         BDDMockito.given(redisTemplate.opsForValue()).willReturn(valueOperations);
@@ -38,17 +39,17 @@ class AuthNumbersServiceTest {
     @Test
     @DisplayName("인증번호 저장")
     void saveAuthNumbers() {
-//        //given
-//        String phoneNumber = "01051391314";
-//        PhoneNumberDto request = createPhoneNumber(phoneNumber);
-//        BDDMockito.willDoNothing().given(valueOperations).set(eq(phoneNumber), any(), eq(Duration.ofMinutes(3L)));
-//
-//        //when
-//        String authNumbers = authNumbersService.saveAuthNumbers(request);
-//
-//        //then
-//        BDDMockito.then(valueOperations).should(times(1)).set(eq(phoneNumber), any(),eq(Duration.ofMinutes(3L)));
-//        assertThat(authNumbers.length()).isEqualTo(6);
+        //given
+        String phoneNumber = "01051391314";
+        PhoneNumberDto request = createPhoneNumber(phoneNumber);
+        BDDMockito.willDoNothing().given(valueOperations).set(eq(phoneNumber), any(), eq(Duration.ofMinutes(3L)));
+
+        //when
+        String authNumbers = authNumbersService.saveAuthNumbers(request);
+
+        //then
+        BDDMockito.then(valueOperations).should(Mockito.times(1)).set(eq(phoneNumber), any(),eq(Duration.ofMinutes(3L)));
+        assertThat(authNumbers.length()).isEqualTo(6);
     }
 
     @Test

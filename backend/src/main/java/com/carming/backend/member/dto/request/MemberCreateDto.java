@@ -31,7 +31,7 @@ public class MemberCreateDto {
 
     private Gender gender;
 
-    private String birthDate;
+    private String birthDate; // 1993/02/06
 
     private CardDto card;
 

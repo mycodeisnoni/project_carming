@@ -1,6 +1,5 @@
 package com.carming.backend.place.repository;
 
-import com.carming.backend.SetUpDb;
 import com.carming.backend.TestConfig;
 import com.carming.backend.place.dto.response.popular.PopularPlaceListDto;
 import org.junit.jupiter.api.DisplayName;
@@ -16,7 +15,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
-@Import({TestConfig.class, SetUpDb.class})
+@Import({TestConfig.class})
 class PlaceRepositoryTest {
 
     @Autowired
